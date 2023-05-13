@@ -9,18 +9,17 @@ import step from './js_modules/steps.js';
 
 const trend = new Trend('___login_example', true);
 
-export default async function () {
-  describe('Example Browser test @performance @browser @example @login', async () => {
+export default function () {
+  describe('Example Browser test @performance @browser @example @login', () => {
     const browser = chromium.launch({
       headless: true,
-      timeout: 120000,
     });
     const page = browser.newPage();
 
     try {
       trend.add(
-        await step(async () => {
-          await page.goto('https://test.k6.io/my_messages.php', {
+        step(() => {
+          page.goto('https://test.k6.io/my_messages.php', {
             waitUntil: 'networkidle',
           });
 
@@ -29,7 +28,8 @@ export default async function () {
 
           const submitButton = page.locator('input[type="submit"]');
 
-          await Promise.all([page.waitForNavigation(), submitButton.click()]);
+          page.waitForNavigation();
+          submitButton.click();
 
           expect(page.locator('h2').textContent(), 'title').to.equal(
             'Welcome, admin!'
