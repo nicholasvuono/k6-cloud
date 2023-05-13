@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      - name: Download latest chromium
+        run: sudo apt update && sudo apt install chromium-browser
       
       - name: Set env
         run: echo "K6_BROWSER_ENABLED=true" >> $GITHUB_ENV
