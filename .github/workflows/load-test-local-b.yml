@@ -8,17 +8,13 @@ jobs:
     steps:
     
       - name: Checkout
-        uses: actions/checkout@v1
-    
-      - name: Download latest chromium
-        run: sudo apt update && sudo apt install chromium-browser
+        uses: actions/checkout@v3
       
-      - name: Set env
-        run: echo "K6_BROWSER_ENABLED=true" >> $GITHUB_ENV
+      # - name: Set env
+      #   run: echo "K6_BROWSER_ENABLED=true" >> $GITHUB_ENV
 
-      - name: Run local Browser k6 test
-        uses: grafana/k6-action@v0.3.0
-        with:
-          filename: example.browser.test.js
-        env:
-          K6_BROWSER_ENABLED: true
+      - name: Docker Build
+        run: docker build -t k6 .
+
+      - name: Run Browser Test
+        run: docker run -v ./:/tests/ testing-k6 run /tests/example.browser.test.js
