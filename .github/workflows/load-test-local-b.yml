@@ -6,6 +6,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
+      - name: Checkout
+        uses: actions/checkout@v1
+    
       - name: Download latest chromium
         run: sudo apt update && sudo apt install chromium-browser
       
