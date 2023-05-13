@@ -1,0 +1,15 @@
+k6_api_load_test:
+  name: k6 API Load Test
+
+  on: workflow_dispatch
+
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Run local API k6 test
+      uses: grafana/k6-action@v0.2.0
+      with:
+        filename: example.api.test.js
