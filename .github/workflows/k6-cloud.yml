@@ -26,4 +26,4 @@ jobs:
         run: k6 login cloud --token ${{ secrets.K6_CLOUD_API_TOKEN }}
 
       - name: Run Test
-        run: k6 cloud ${{ github.event.inputs.test_case }}
+        run: k6 run --out cloud ${{ github.event.inputs.test_case }}
