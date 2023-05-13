@@ -17,4 +17,4 @@ jobs:
         run: docker build -t k6 .
 
       - name: Run Browser Test
-        run: docker run -v ./:/tests/ testing-k6 run /tests/example.browser.test.js
+        run: docker run -v ./:/tests/ k6 run /tests/example.browser.test.js
