@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   k6-browser:
 
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
     
