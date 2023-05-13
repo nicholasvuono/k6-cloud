@@ -13,6 +13,8 @@ jobs:
         run: echo "K6_BROWSER_ENABLED=true" >> $GITHUB_ENV
 
       - name: Run local Browser k6 test
-        uses: grafana/k6-action@v0.2.0
+        uses: grafana/k6-action@v0.3.0
         with:
           filename: example.browser.test.js
+        env:
+          K6_BROWSER_ENABLED: true
