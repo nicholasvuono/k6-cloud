@@ -4,6 +4,8 @@ jobs:
   k6-browser:
 
     runs-on: ubuntu-latest
+    
+    environment: k6-actions
 
     steps:
       - name: Checkout
