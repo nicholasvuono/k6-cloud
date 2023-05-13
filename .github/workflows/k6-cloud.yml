@@ -22,5 +22,8 @@ jobs:
       - name: Set env
         run: echo "K6_BROWSER_ENABLED=true" >> $GITHUB_ENV
 
-      - name: Run Browser Test
-        run: k6 run ${{ github.event.inputs.test_case }}
+      - name: k6 cloud login
+        run: k6 login cloud --token $K6_CLOUD_API_TOKEN
+
+      - name: Run Test
+        run: k6 cloud ${{ github.event.inputs.test_case }}
