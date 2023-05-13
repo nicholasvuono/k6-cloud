@@ -11,7 +11,7 @@ const trend = new Trend('___login_example', true);
 
 export default async function () {
   describe('Example Browser test @performance @browser @example @login', async () => {
-    const browser = chromium.launch({ headless: false });
+    const browser = chromium.launch({ headless: true });
     const page = browser.newPage();
 
     try {
