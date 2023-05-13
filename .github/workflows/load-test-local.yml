@@ -1,11 +1,8 @@
 k6_api_load_test:
   name: k6 API Load Test
 
-  on:
-    push:
-    branches:
-    - 'main'
-    
+  on: push
+
   runs-on: ubuntu-latest
 
   steps:
