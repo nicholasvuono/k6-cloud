@@ -13,7 +13,7 @@ export default async function () {
   describe('Example Browser test @performance @browser @example @login', async () => {
     const browser = chromium.launch({
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--no-sandbox'],
     });
     const page = browser.newPage();
 

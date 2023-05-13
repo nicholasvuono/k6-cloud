@@ -1,5 +1,5 @@
 FROM grafana/k6:latest
-USER 12345
+USER root
 
 RUN apk update && apk add --no-cache chromium
 
