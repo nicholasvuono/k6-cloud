@@ -1,5 +1,10 @@
 k6_browser_load_test:
   name: k6 Browser Load Test
+  on:
+    push:
+    branches:
+    - 'main'
+
   runs-on: ubuntu-latest
 
   steps:
