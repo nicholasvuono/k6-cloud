@@ -1,6 +1,6 @@
-export default function step(func) {
+export default async function step(func) {
   const start = new Date().getTime();
-  func();
+  await func();
   const end = new Date().getTime();
   return end - start;
 }
